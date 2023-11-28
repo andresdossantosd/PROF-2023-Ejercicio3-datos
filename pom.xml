@@ -11,6 +11,8 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
 	</properties>
 
 	<dependencies>
@@ -33,6 +35,7 @@
 
 	<build>
 		<plugins>
+			
 			<!-- https://stackoverflow.com/questions/49398894/unable-to-compile-simple-java-10-java-11-project-with-maven -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -50,6 +53,20 @@
 				<version>2.22.0</version>
 			</plugin>
 
+			<plugin>
+				<groupId>upm.es</groupId>
+				<artifactId>test-smell-maven-plugin</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>testSmells</goal>
+						</goals>
+					</execution>
+				</executions>
+				
+        	</plugin>
+			
 		</plugins>
 	</build>
 
